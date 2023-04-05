@@ -85,7 +85,6 @@ else
     [tau,gbar,vr] = deal(7,0.4,-80); % Inhibitory
 end
 
-% ddelta = [zeros(1,149) 1 zeros(1,size(t,2)-150)];
 % [v1, v2, I1, I2, u1, u2, g1, g2] = izhikevich_two(t,v0,u0,i0,a,b,c,d,tau,gbar,ddelta,vr);
 [v1, v2, I1, I2, u1, u2, g1, g2] = izhi_two(t,v0,u0,i0,g0,a,b,c,d,tau,gbar,vr,ei);
 
@@ -250,8 +249,8 @@ sim_params.record_dt = sim_params.dt; % (ms) simulation recording time step
 syn_params.E_exc = 0;
 syn_params.E_inh = -80;
 syn_params.gmax_exc = 0.1;
-syn_params.gmax_inh = 0.4; % 0.4
-syn_params.tau_exc = 2; % 2
+syn_params.gmax_inh = 0.4;
+syn_params.tau_exc = 2;
 syn_params.tau_inh = 10;
 
 % Simulate
@@ -272,11 +271,11 @@ sim_params.record_dt = sim_params.dt; % (ms) simulation recording time step
 
 
 % currents for M, C, L, E, R
-M = 0; % 4      x
-C = 4.5; % 5      3.5
-L = 3.5; % 0.5    0.35
-E = 4.5; % 1.25      0.875
-R = 5.5; % 5      3.5
+M = 0;
+C = 4.5; % 5        3.5
+L = 3.5; % 0.5      0.35
+E = 4.5; % 1.25     0.875
+R = 5.5; % 5        3.5
 
 % Network Parameters
 N = 10;
@@ -339,11 +338,11 @@ sim_params.record_dt = sim_params.dt; % (ms) simulation recording time step
 
 
 % currents for M, C, L, E, R
-M = 0; % 4      x
-C = 6; % 5      3.5
-L = 5; % 0.5    0.35
-E = 6; % 1.25      0.875
-R = 7; % 5      3.5
+M = 0; % 0
+C = 6; % 4.5
+L = 5; % 3.5
+E = 6; % 4.5
+R = 7; % 5.5
 
 % Network Parameters
 N = 10;
